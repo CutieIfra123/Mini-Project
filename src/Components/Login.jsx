@@ -76,7 +76,7 @@ const Login = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="mx-auto w-[530px] h-auto my-10 text-center shadow-md border border-[#eee] p-4 box-border">
+    <div className="mx-auto w-[530px] h-auto my-10 text-center shadow-md border font-sans border-[#eee] p-4 box-border">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <input

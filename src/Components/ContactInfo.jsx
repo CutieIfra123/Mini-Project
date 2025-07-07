@@ -29,7 +29,7 @@ const ContactInfo = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const calculateTotal = () => {
-    const basePrice = 4;
+    const basePrice = 3;
     const prices = {
       lettuce: 0.5,
       bacon: 0.7,
@@ -58,7 +58,7 @@ const ContactInfo = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10 px-4">
-      <h2 className="text-2xl font-bold mb-6 text-center text-green-700">
+      <h2 className="text-2xl font-sans font-bold mb-6 text-center text-green-700">
         Enter your Contact Info
       </h2>
 
@@ -110,7 +110,7 @@ const ContactInfo = () => {
         />
 
         <div className="flex justify-between items-center">
-          <label className="font-medium">Delivery Method:</label>
+          <label className="font-medium font-sans">Delivery Method:</label>
           <select
             name="deliveryMethod"
             value={formData.deliveryMethod}

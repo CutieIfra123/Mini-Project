@@ -33,7 +33,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="h-[60px] bg-amber-800 shadow-md px-4 flex justify-between items-center">
+      <nav className="h-[60px] bg-amber-800 shadow-md px-4 flex justify-between items-center font-sans">
         <div className="md:hidden">
           <Menu
             size={28}
@@ -126,7 +126,7 @@ const NavBar = () => {
           ) : (
             <button
               onClick={() => handleNavigation("/auth")}
-              className="text-left"
+              className="text-left "
             >
               Login
             </button>

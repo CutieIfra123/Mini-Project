@@ -57,14 +57,16 @@ const Body = ({ Price }) => {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center">
           <div className="bg-white rounded p-6 w-[400px] shadow-lg text-black">
-            <h2 className="text-xl font-bold mb-4">Your Order Summary:</h2>
-            <ul className="list-disc pl-6 mb-4">
+            <h2 className="text-xl font-sans font-bold mb-4">
+              Your Order Summary:
+            </h2>
+            <ul className="list-disc pl-6 mb-4 font-sans">
               {lettuceCount > 0 && <li>Lettuce: {lettuceCount}</li>}
               {baconCount > 0 && <li>Bacon: {baconCount}</li>}
               {cheeseCount > 0 && <li>Cheese: {cheeseCount}</li>}
               {meatCount > 0 && <li>Meat: {meatCount}</li>}
             </ul>
-            <p className="font-bold mb-4">
+            <p className="font-bold mb-4 font-sans">
               Total Price: ${totalPrice.toFixed(2)}
             </p>
             <p className="mb-4">Continue to Checkout?</p>
@@ -94,7 +96,7 @@ const Body = ({ Price }) => {
         </div>
       )}
 
-      <div className="min-h-[430px] flex justify-center items-start">
+      <div className="min-h-[430px] flex justify-center items-start ">
         <div className="flex flex-col pt-[40px] items-center w-[360px]">
           <div className="relative bg-gradient-to-r from-yellow-700 bg-yellow-600 to-yellow-600 w-full h-[80px] rounded-t-[40px] block rounded-tl-[50%] rounded-tr-[50%]">
             <div className="absolute w-[45px] h-[15px] bg-white left-[5%] top-[40%] rotate-[30deg] shadow-[inset_-2px_-3px_rgb(201,201,201)] rounded-[40%]" />
@@ -105,7 +107,7 @@ const Body = ({ Price }) => {
           </div>
 
           {ingredientsOrder.length === 0 ? (
-            <p className="text-center text-dark font-bold py-4 text-lg">
+            <p className="text-center font-sans text-dark font-bold py-4 text-lg">
               No Ingredients Added
             </p>
           ) : (
@@ -121,12 +123,12 @@ const Body = ({ Price }) => {
       </div>
 
       <footer className="bg-yellow-700 min-h-[339px] text-white px-6 py-6">
-        <p className="text-center text-xl font-bold py-4">
+        <p className="text-center font-sans text-xl font-bold py-4">
           Current Price: {totalPrice.toFixed(2)}$
         </p>
 
         <div className="flex justify-center gap-10">
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 font-bold">
             <p>Lettuce</p>
             <p>Bacon</p>
             <p>Cheese</p>
@@ -215,7 +217,7 @@ const Body = ({ Price }) => {
             className={`px-6 py-2 font-bold rounded ${
               ingredientsOrder.length === 0
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-yellow-500 text-white hover:bg-amber-300"
+                : "bg-yellow-500 text-white font-sans hover:bg-amber-300"
             }`}
           >
             ORDER NOW

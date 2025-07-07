@@ -33,7 +33,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center pt-10 text-center">
+    <div className="min-h-screen flex flex-col items-center pt-10 text-center font-sans">
       <h2 className="text-2xl font-bold text-green-700 mb-4">
         We hope it tastes well!
       </h2>
