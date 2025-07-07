@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import Loader from "./Loader"; 
+import Loader from "./Loader";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -47,12 +47,12 @@ const Login = () => {
     }
 
     setFirebaseError("");
-    setIsLoading(true); 
+    setIsLoading(true);
 
     try {
       if (login) {
         await signInWithEmailAndPassword(auth, email, password);
-        navigate("/"); 
+        navigate("/");
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Registered successfully ✅");
@@ -73,7 +73,7 @@ const Login = () => {
     }
   };
 
-  if (isLoading) return <Loader />; 
+  if (isLoading) return <Loader />;
 
   return (
     <div className="mx-auto w-[530px] h-auto my-10 text-center shadow-md border border-[#eee] p-4 box-border">

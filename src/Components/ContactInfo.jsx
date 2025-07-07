@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useOrder } from "../context/OrderContext";
 
 const ContactInfo = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const location = useLocation();
   const ingredients = location.state?.ingredientsOrder || [];
 
@@ -56,17 +56,6 @@ const ContactInfo = () => {
       <h2 className="text-2xl font-bold mb-6 text-center text-green-700">
         Enter your Contact Info
       </h2>
-
-      {ingredients.length > 0 && (
-        <div className="mb-4">
-          <h3 className="font-semibold text-lg mb-2">Your Burger Includes:</h3>
-          <ul className="list-disc list-inside text-sm text-gray-600">
-            {ingredients.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -132,7 +121,7 @@ const ContactInfo = () => {
           type="submit"
           className="bg-green-600 text-white font-bold py-2 rounded hover:bg-green-700"
         >
-          Submit Order
+          Order
         </button>
       </form>
 

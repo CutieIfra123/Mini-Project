@@ -53,29 +53,32 @@ const NavBar = () => {
           />
         </div>
 
-        <div className="hidden md:flex items-center gap-6 text-white font-medium">
+        <div className="hidden md:flex items-center gap-3 text-white font-medium">
           {user ? (
             <>
               <button
                 onClick={() => handleNavigation("/")}
-                className="hover:underline"
+                className="px-6 py-4 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-blue-500 hover:bg-amber-700"
               >
                 Burger Builder
               </button>
               <button
                 onClick={() => handleNavigation("/orders")}
-                className="hover:underline"
+                className="px-6 py-4 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-blue-500 hover:bg-amber-700"
               >
                 Orders
               </button>
-              <button onClick={handleLogout} className="hover:underline">
+              <button
+                onClick={handleLogout}
+                className="px-6 py-4 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-blue-500 hover:bg-amber-700"
+              >
                 Logout
               </button>
             </>
           ) : (
             <button
               onClick={() => handleNavigation("/auth")}
-              className="hover:underline"
+              className="px-6 py-4 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-blue-500 hover:bg-amber-700"
             >
               Login
             </button>

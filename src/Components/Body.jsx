@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -43,7 +42,7 @@ const Body = ({ Price }) => {
       <div className="w-[350px] h-[20px] my-2 mx-auto rounded-[20px] bg-gradient-to-b from-green-600 to-green-500"></div>
     ),
     bacon: (
-      <div className="w-[80%] h-[10px] my-2 mx-auto bg-gradient-to-b from-red-900 to-red-700"></div>
+      <div className="w-[350px] h-[10px] my-2 mx-auto bg-gradient-to-b from-red-900 to-red-700"></div>
     ),
     cheese: (
       <div className="w-[350px] h-[15px] my-2 mx-auto rounded-[20px] bg-gradient-to-b from-yellow-300 to-yellow-500"></div>
@@ -95,11 +94,9 @@ const Body = ({ Price }) => {
         </div>
       )}
 
-  
-      <div className="min-h-[500px] flex justify-center items-start">
+      <div className="min-h-[430px] flex justify-center items-start">
         <div className="flex flex-col pt-[40px] items-center w-[360px]">
           <div className="relative bg-gradient-to-r from-yellow-700 bg-yellow-600 to-yellow-600 w-full h-[80px] rounded-t-[40px] block rounded-tl-[50%] rounded-tr-[50%]">
-          
             <div className="absolute w-[45px] h-[15px] bg-white left-[5%] top-[40%] rotate-[30deg] shadow-[inset_-2px_-3px_rgb(201,201,201)] rounded-[40%]" />
             <div className="absolute w-[45px] h-[15px] bg-white left-[20%] top-[30%] rotate-[-20deg] shadow-[inset_-2px_-3px_rgb(201,201,201)] rounded-[40%]" />
             <div className="absolute w-[45px] h-[15px] bg-white left-[60%] top-[27%] rotate-[20deg] shadow-[inset_-2px_-3px_rgb(201,201,201)] rounded-[40%]" />
@@ -108,7 +105,7 @@ const Body = ({ Price }) => {
           </div>
 
           {ingredientsOrder.length === 0 ? (
-            <p className="text-center text-gray-500 py-4 font-semibold">
+            <p className="text-center text-dark font-bold py-4 text-lg">
               No Ingredients Added
             </p>
           ) : (
