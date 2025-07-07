@@ -1,14 +1,21 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useOrder } from "../context/OrderContext";
-
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogAction,
+} from "@/components/ui/alert-dialog";
 const ContactInfo = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
   const ingredients = location.state?.ingredientsOrder || [];
-
+  const [dialogOpen, setDialogOpen] = useState(false);
   const { addOrder } = useOrder();
-
   const [formData, setFormData] = useState({
     name: "",
     street: "",
@@ -21,7 +28,6 @@ const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const calculateTotal = () => {
     const basePrice = 4;
     const prices = {
@@ -47,8 +53,7 @@ const navigate = useNavigate();
     };
 
     addOrder(newOrder);
-    alert("Order submitted successfully!");
-    navigate("/");
+    setDialogOpen(true);
   };
 
   return (
@@ -135,6 +140,29 @@ const navigate = useNavigate();
           BACK TO CHECKOUT
         </button>
       </div>
+      <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Order Done ✅</AlertDialogTitle>
+            <AlertDialogDescription>
+              Please wait while we prepare your order...
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction asChild>
+              <button
+                onClick={() => {
+                  setDialogOpen(false);
+                  navigate("/");
+                }}
+                className="bg-yellow-700 hover:bg-yellow-800 text-white font-semibold px-4 py-2 rounded"
+              >
+                Go to Home
+              </button>
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

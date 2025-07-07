@@ -120,7 +120,7 @@ const Body = ({ Price }) => {
         </div>
       </div>
 
-      <footer className="bg-amber-500 min-h-[339px] text-white px-6 py-6">
+      <footer className="bg-yellow-700 min-h-[339px] text-white px-6 py-6">
         <p className="text-center text-xl font-bold py-4">
           Current Price: {totalPrice.toFixed(2)}$
         </p>
@@ -138,7 +138,9 @@ const Body = ({ Price }) => {
               onClick={() => removeIngredient("lettuce")}
               disabled={lettuceCount === 0}
               className={`px-4 py-1 rounded ${
-                lettuceCount === 0 ? "bg-gray-400" : "bg-red-500"
+                lettuceCount === 0
+                  ? "bg-gray-400 text-gray-300"
+                  : "bg-yellow-600"
               }`}
             >
               Less
@@ -147,7 +149,7 @@ const Body = ({ Price }) => {
               onClick={() => removeIngredient("bacon")}
               disabled={baconCount === 0}
               className={`px-4 py-1 rounded ${
-                baconCount === 0 ? "bg-gray-400" : "bg-red-500"
+                baconCount === 0 ? "bg-gray-400 text-gray-300" : "bg-yellow-600"
               }`}
             >
               Less
@@ -156,7 +158,9 @@ const Body = ({ Price }) => {
               onClick={() => removeIngredient("cheese")}
               disabled={cheeseCount === 0}
               className={`px-4 py-1 rounded ${
-                cheeseCount === 0 ? "bg-gray-400" : "bg-red-500"
+                cheeseCount === 0
+                  ? "bg-gray-400 text-gray-300"
+                  : "bg-yellow-600"
               }`}
             >
               Less
@@ -165,7 +169,7 @@ const Body = ({ Price }) => {
               onClick={() => removeIngredient("meat")}
               disabled={meatCount === 0}
               className={`px-4 py-1 rounded ${
-                meatCount === 0 ? "bg-gray-400" : "bg-red-500"
+                meatCount === 0 ? "bg-gray-400 text-gray-300" : "bg-yellow-600"
               }`}
             >
               Less
@@ -211,7 +215,7 @@ const Body = ({ Price }) => {
             className={`px-6 py-2 font-bold rounded ${
               ingredientsOrder.length === 0
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-yellow-900 text-white hover:bg-yellow-700"
+                : "bg-yellow-500 text-white hover:bg-amber-300"
             }`}
           >
             ORDER NOW
